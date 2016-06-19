@@ -1,10 +1,9 @@
 "use strict";
 
-AndroidPicker.controller("PhoneCtrl", [
+AndroidApp.controller("PhoneCtrl", [
  "$http",
  "$scope",
  "$location",
- 
 
   function ($http, $scope, $location) {
     
@@ -12,7 +11,7 @@ AndroidPicker.controller("PhoneCtrl", [
     $scope.phone = [];
 
     $http 
-      .get('http://localhost:61927/api/Home')
+      .get('http://localhost:61754/api/Home')
       .success(inv => $scope.phone_list = inv);
       
     $scope.details = function (id) {
