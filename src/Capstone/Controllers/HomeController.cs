@@ -16,26 +16,28 @@ namespace Capstone.Controllers
         {
             _context = context;
         }
-        // GET api/values
+        // GET api/Home gets all data back
         [HttpGet]
-        public IActionResult Get([FromQuery] string phone)
+        public IActionResult Get([FromQuery] string Name)
         {
             IQueryable<Phones> Phones = from p in _context.Phones
                                         select p;
-            if (phone != null)
+
+            // api/Home?Name=$(Name)
+            if (Name != null)
             {
-                Phones = Phones.Where(c => c.Name.Contains(phone));
+                Phones = Phones.Where(c => c.Name.Contains(Name));
             }
 
             return Ok(Phones);
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        // GET api/values/5 gets data with that Id
+        [HttpGet("{cpuid}")]
+        public IActionResult Get(int cpuid)
         {
             IQueryable<object> Phone = from p in _context.Phones
-                                       where p.PhoneId == id
+                                       where p.processorType == cpuid
                                        select p;
             return Ok(Phone);
         }

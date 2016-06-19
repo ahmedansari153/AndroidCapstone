@@ -30,6 +30,7 @@ namespace Capstone.Models
         public int ImageId { get; set; }
         public int BatteryMah { get; set; }
         public DateTime ReleaseDate { get; set; }
-        public decimal ScreenSize { get; set; } 
+        public decimal ScreenSize { get; set; }
+        public int processorType { get; set; } 
     }
 }

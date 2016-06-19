@@ -8,9 +8,10 @@ using Capstone.Models;
 namespace Capstone.Migrations
 {
     [DbContext(typeof(CapstoneContext))]
-    partial class CapstoneContextModelSnapshot : ModelSnapshot
+    [Migration("20160619204321_AddedProcessorType")]
+    partial class AddedProcessorType
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.0-rc2-20901")
