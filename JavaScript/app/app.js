@@ -2,7 +2,7 @@
 
 /* exported MusicHistory */
 
-let AndroidApp = angular.module("AndroidApp", ["ngRoute"])
+let AndroidApp = angular.module("AndroidApp", ["ngRoute", 'ui.grid'])
 
 /*
   Define a promise for any view that needs an authenticated user
@@ -29,6 +29,11 @@ AndroidApp.config(["$routeProvider",
         controller: "PhoneCtrl"
         // resolve: { isAuth }
       }).
+      when("/phones", {
+        templateUrl: "partials/phones.html",
+        controller: "PhoneCtrl"
+        // resolve: { isAuth }
+      })
       otherwise({
         redirectTo: "/"
       });

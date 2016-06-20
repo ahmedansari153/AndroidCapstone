@@ -13,20 +13,36 @@ AndroidApp.controller("PhoneCtrl", [
     $http 
       .get('http://localhost:61754/api/Home')
       .success(inv => $scope.phone_list = inv);
-      
-    $scope.details = function (id) {
-      $location.path(`/phone/${id}`);
-    }
 
     // Title Filter Get
-    $("#title_filter").on('keyup', function() {
-      var searchString = $("#title_filter").val();
-      console.log('searchString', searchString);
+    var selectedVal = "";
+    var selected = $('input[name=cpu]:checked', '#radioForm');
 
+    $("form").submit(function() {
+      if (selected.length > 0) {
+        selectedVal = selected.val();
+        console.log(selected.val(), "selected value")
+      }
+    })
+
+    $("form").submit(function() {
+      console.log("This is submitting")
+    if( selectedVal === "1") {
       $http 
-        .get(`http://localhost:61927/api/Home?phoneName=${searchString}`)
-        .success(inv => $scope.song_list = inv);
-
-    })  
+        .get(`http://localhost:61754/api/Home/1`)
+        .success(inv => $scope.phone = inv);
+      }
+    if( selectedVal === "2") {
+      $http 
+        .get(`http://localhost:61754/api/Home/2`)
+        .success(inv => $scope.phone = inv);
+      }
+    if( selectedVal === "3") {
+      $http 
+        .get(`http://localhost:61754/api/Home/3`)
+        .success(inv => $scope.phone = inv);
+      }
+    })
+      
   }
 ]);
