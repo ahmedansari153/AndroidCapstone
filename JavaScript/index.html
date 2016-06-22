@@ -1,0 +1,43 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Music History API</title>
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+</head>
+
+<body ng-app="AndroidApp">
+ <div id="fb-root"></div>
+<script>
+window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1648299602162548',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+  };
+
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6&appId=1648299602162548";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-login-button" data-max-rows="10" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>
+  <div ng-view></div>
+
+
+  <script src="bower_components/oauth-js/dist/oauth.min.js"></script>
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/angular-route/angular-route.min.js"></script>
+  <script src="app/app.js"></script>
+  <script src="app/controllers/PhoneCtrl.js"></script>
+  <script src="app/controllers/PhoneDetailCtrl.js"></script>
+  <script src="app/factories/StateFactory.js"></script>
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <link rel="styleSheet" href="node_modules/angular-ui-grid/ui-grid.min.css"/>
+  <script src="node_modules/angular-ui-grid/ui-grid.min.js"></script>
+</body>
+</html>
