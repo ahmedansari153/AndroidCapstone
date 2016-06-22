@@ -2,7 +2,7 @@
 
 /* exported MusicHistory */
 
-let AndroidApp = angular.module("AndroidApp", ["ngRoute", 'ui.grid'])
+let AndroidApp = angular.module("AndroidApp", ["ngRoute", "ui.grid", "ui.grid.resizeColumns", 'ui.grid.selection'])
 
 /*
   Define a promise for any view that needs an authenticated user
@@ -29,11 +29,21 @@ AndroidApp.config(["$routeProvider",
         controller: "PhoneCtrl"
         // resolve: { isAuth }
       }).
-      when("/phones", {
+      when("/phone1", {
         templateUrl: "partials/phones.html",
-        controller: "PhoneCtrl"
+        controller: "PhoneDtlCtrl"
         // resolve: { isAuth }
-      })
+      }).
+      when("/phone2", {
+        templateUrl: "partials/phones.html",
+        controller: "PhoneDtlCtrl"
+        // resolve: { isAuth }
+      }).
+      when("/phone3", {
+        templateUrl: "partials/phones.html",
+        controller: "PhoneDtlCtrl"
+        // resolve: { isAuth }
+      }).
       otherwise({
         redirectTo: "/"
       });

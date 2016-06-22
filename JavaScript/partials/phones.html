@@ -1,3 +1,4 @@
-<div ng-controller="MainCtrl">
-  <div ui-grid="{ data: phone }" class="myGrid"></div>
+<div ng-controller="PhoneDtlCtrl">
+  <div ui-grid="gridOptions" ui-grid-resize-columns ui-grid-selection class="myGrid"></div>
+  <button ng-click="selectRow()">View this item</button>
 </div>

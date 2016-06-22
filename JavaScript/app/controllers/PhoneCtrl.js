@@ -7,8 +7,25 @@ AndroidApp.controller("PhoneCtrl", [
 
   function ($http, $scope, $location) {
     
-    $scope.phone_list = [];
-    $scope.phone = [];
+    $scope.go = function ( path ) {
+     $location.path( path );
+    };
+    $scope.phone_list = []; 
+    $("a").on("click", function() {
+        if(document.getElementById('cpuid1').checked) {
+            document.getElementById('myLink').href = "#/phone1";
+            console.log("phone1")
+
+        }
+        else if(document.getElementById('cpuid2').checked) {
+            document.getElementById('myLink').href = "#/phone2";
+            console.log("phone2")
+        }
+        else if(document.getElementById('cpuid3').checked) {
+            document.getElementById('myLink').href = "#/phone3";
+            console.log("phone3")
+        }
+    })
 
     $http 
       .get('http://localhost:61754/api/Home')
@@ -23,26 +40,6 @@ AndroidApp.controller("PhoneCtrl", [
         selectedVal = selected.val();
         console.log(selected.val(), "selected value")
       }
-    })
-
-    $("form").submit(function() {
-      console.log("This is submitting")
-    if( selectedVal === "1") {
-      $http 
-        .get(`http://localhost:61754/api/Home/1`)
-        .success(inv => $scope.phone = inv);
-      }
-    if( selectedVal === "2") {
-      $http 
-        .get(`http://localhost:61754/api/Home/2`)
-        .success(inv => $scope.phone = inv);
-      }
-    if( selectedVal === "3") {
-      $http 
-        .get(`http://localhost:61754/api/Home/3`)
-        .success(inv => $scope.phone = inv);
-      }
-    })
-      
+    })      
   }
 ]);
