@@ -38,7 +38,9 @@ namespace Capstone.Controllers
         {
             IQueryable<object> Phone = from p in _context.Phones
                                        where p.processorType == cpuid
-                                       select p;
+                                       select new { p.PhoneId, p.Carrier, p.Name, p.AndroidVersion, p.DisplayResolution, p.ScreenSize, p.BatteryMah, p.WaterProof, p.Price, p.ReleaseDate, p.WirelessCharging}
+                                       
+                                       ;
             return Ok(Phone);
         }
 
