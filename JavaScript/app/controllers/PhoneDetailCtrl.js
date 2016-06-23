@@ -2,13 +2,15 @@
 
 AndroidApp.controller("PhoneDtlCtrl", [
  "$http",
+ "$rootScope",
  "$scope",
  "$location", 
+ 
 
-  function ($http, $scope, $location, phoneService) {
+  function ($http, $rootScope, $scope, $location, phoneService) {
 
-    $scope.callToAddToPhone = function(currObj){
-        phoneService.addProduct(currObj);
+    $scope.go = function ( path ) {
+      $location.path( path );
     };
 
     $scope.gridOptions = {
@@ -42,9 +44,11 @@ AndroidApp.controller("PhoneDtlCtrl", [
   };
 
   $scope.selectRow = function(){
-    $scope.myGridApi.selection.getSelectedRows();
-    console.log("This is working", $scope.myGridApi.selection.getSelectedRows());
-};
+    let phoneSelection = $scope.myGridApi.selection.getSelectedRows();
+    $rootScope.PhoneSelection = phoneSelection
+    console.log("This is working", $rootScope.PhoneSelection);
+    return $rootScope.PhoneSelection
+  };
 
     $("document").ready(function() {
     $scope.phone_list = [];

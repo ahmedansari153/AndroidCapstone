@@ -44,6 +44,10 @@ AndroidApp.config(["$routeProvider",
         controller: "PhoneDtlCtrl"
         // resolve: { isAuth }
       }).
+      when("/selection", {
+        templateUrl: "partials/selection.html",
+        controller: "IndvidualPhnCtrl"
+      }).
       otherwise({
         redirectTo: "/"
       });
