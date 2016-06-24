@@ -3,13 +3,19 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Music History API</title>
+  <title>AndroidPicker</title>
+  <link href='https://fonts.googleapis.com/css?family=Oxygen:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="styles/main.css">
 </head>
 
 <body ng-app="AndroidApp">
- <div id="fb-root"></div>
-<script>
+<nav class="navbar navbar-default">
+<ul class="nav navbar-nav">
+<li><a href="#/phone">View All Phones</a></li>
+<li><a href="#/">Survey</a></li>
+</ul>
+  <div class="container">
+    <script>
 window.fbAsyncInit = function() {
     FB.init({
       appId      : '1648299602162548',
@@ -25,7 +31,13 @@ window.fbAsyncInit = function() {
   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6&appId=1648299602162548";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+<div class="login">
 <div class="fb-login-button" data-max-rows="10" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>
+</div>
+</div>
+</nav>
+ <div id="fb-root"></div>
+
   <div ng-view></div>
 
 
@@ -39,5 +51,13 @@ window.fbAsyncInit = function() {
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
   <link rel="styleSheet" href="node_modules/angular-ui-grid/ui-grid.min.css"/>
   <script src="node_modules/angular-ui-grid/ui-grid.min.js"></script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </body>
 </html>

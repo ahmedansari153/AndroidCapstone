@@ -14,9 +14,11 @@ AndroidApp.controller("PhoneDtlCtrl", [
     };
 
     $scope.gridOptions = {
-      enableSorting: true,
-      enableRowSelection: true, 
-      enableRowHeaderSelection: false,
+      enableRowSelection: true,
+    enableSelectAll: true,
+    selectionRowHeaderWidth: 35,
+    rowHeight: 35,
+    showGridFooter:true,
 
        columnDefs: [
         { field: 'PhoneId', visible: false },
@@ -29,9 +31,10 @@ AndroidApp.controller("PhoneDtlCtrl", [
         { field: 'WaterProof' },
         { field: 'Price' },
         { field: 'WirelessCharging' },
+        { field: 'ImageUrl', visible: false },
       ]
     }
-    $scope.gridOptions.multiSelect = false;
+    $scope.gridOptions.multiSelect = true;
     $scope.gridOptions.modifierKeysToMultiSelect = false;
     $scope.gridOptions.noUnselect = true;
     $scope.gridOptions.onRegisterApi = function( gridApi ) {
@@ -62,6 +65,13 @@ AndroidApp.controller("PhoneDtlCtrl", [
     else if(window.location.href == "http://localhost:8080/#/phone2") {
       $http 
         .get(`http://localhost:61754/api/Home/2`)
+        .success(function(data) {
+          $scope.gridOptions.data = data;
+        });
+      }
+    else if(window.location.href == "http://localhost:8080/#/phone") {
+      $http 
+        .get(`http://localhost:61754/api/Home/`)
         .success(function(data) {
           $scope.gridOptions.data = data;
         });

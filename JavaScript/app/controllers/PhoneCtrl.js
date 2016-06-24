@@ -13,18 +13,46 @@ AndroidApp.controller("PhoneCtrl", [
     $scope.phone_list = []; 
     $("a").on("click", function() {
         if(document.getElementById('cpuid1').checked) {
-            document.getElementById('myLink').href = "#/phone1";
-            console.log("phone1")
-
+            var FirstQuestionAnswer = $("#cpuid1").val()
         }
         else if(document.getElementById('cpuid2').checked) {
-            document.getElementById('myLink').href = "#/phone2";
-            console.log("phone2")
+            var FirstQuestionAnswer = $("#cpuid2").val()
         }
         else if(document.getElementById('cpuid3').checked) {
-            document.getElementById('myLink').href = "#/phone3";
-            console.log("phone3")
+            var FirstQuestionAnswer = $("#cpuid3").val() 
         }
+        if(document.getElementById('cpuid4').checked) {
+            var SecondQuestionAnswer = $("#cpuid4").val()
+        }
+        else if(document.getElementById('cpuid5').checked) {
+            var SecondQuestionAnswer = $("#cpuid5").val()
+        }
+        else if(document.getElementById('cpuid6').checked) {
+            var SecondQuestionAnswer = $("#cpuid6").val() 
+        }
+        if(document.getElementById('cpuid7').checked) {
+            var ThirdQuestionAnswer = $("#cpuid7").val()
+        }
+        else if(document.getElementById('cpuid8').checked) {
+            var ThirdQuestionAnswer = $("#cpuid8").val()
+        }
+        else if(document.getElementById('cpuid9').checked) {
+            var ThirdQuestionAnswer = $("#cpuid9").val() 
+        }
+        let Total = parseFloat(FirstQuestionAnswer) + parseFloat(SecondQuestionAnswer) + parseFloat(ThirdQuestionAnswer)
+        if(Total >= 3){
+          document.getElementById('myLink').href = "#/phone1";
+        }
+        if(Total >= 10){
+          document.getElementById('myLink').href = "#/phone2";
+        }
+        if(Total >= 20){
+          document.getElementById('myLink').href = "#/phone3";
+        }
+        console.log(FirstQuestionAnswer, "FirstQuestionAnswer")
+        console.log(SecondQuestionAnswer, "SecondQuestionAnswer")
+        console.log(ThirdQuestionAnswer, "ThirdQuestionAnswer")
+        console.log(Total, "Total")
     })
 
     $http 

@@ -6,6 +6,7 @@ AndroidApp.controller("IndvidualPhnCtrl", [
  "$location", 
 
   function ($rootScope, $scope, $location) {
+
 	$scope.gridOptions = {
       enableSorting: true,
       enableRowSelection: true, 
@@ -22,6 +23,7 @@ AndroidApp.controller("IndvidualPhnCtrl", [
         { field: 'WaterProof' },
         { field: 'Price' },
         { field: 'WirelessCharging' },
+        { field: 'ImageUrl', visible: false },
       ]
     }
     $scope.gridOptions.multiSelect = false;

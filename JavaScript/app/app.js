@@ -34,6 +34,11 @@ AndroidApp.config(["$routeProvider",
         controller: "PhoneDtlCtrl"
         // resolve: { isAuth }
       }).
+      when("/phone", {
+        templateUrl: "partials/phones.html",
+        controller: "PhoneDtlCtrl"
+        // resolve: { isAuth }
+      }).
       when("/phone2", {
         templateUrl: "partials/phones.html",
         controller: "PhoneDtlCtrl"

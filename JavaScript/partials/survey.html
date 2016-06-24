@@ -1,8 +1,21 @@
 
-<h1>What level of phone use do you consider yourself doing?</h1>
-<form id="radioForm">
-  <input id="cpuid3" type="radio" name="cpu" value="3"> Phone Automation, Custom ROMS, Rooting<br>
-  <input id="cpuid2" type="radio" name="cpu" value="2"> Games, Videos, Internet surfing<br>
-  <input id="cpuid1" type="radio" name="cpu" value="1"> Phone Calls and Texting<br>
-  <a href="" id="myLink">Submit</a>
+<h1 id="header" ng-click="go('phone')" class="radioFormDiv">Answer This Brief Survery to Identify What Phones You Need.</h1>
+<div class="radioFormDiv">How much time do you spend using your phone for completing tasks or entertainment everyday?</div>  
+<form id="radioForm1" class="radioForm">
+  <input id="cpuid9" type="radio" name="cpu" value="10"> 3+ Hours<br>
+  <input id="cpuid8" type="radio" name="cpu" value="5"> 1+ Hours<br>
+  <input id="cpuid7" type="radio" name="cpu" value="1"> 30 Minutes or Less<br>
 </form>
+<div class="radioFormDiv">What kind of tasks do you do with your phone?</div>  
+<form id="radioForm2" class="radioForm">
+  <input id="cpuid6" type="radio" name="cpu" value="10"> Phone Automation, Custom ROMS, Rooting, and all of the below.<br>
+  <input id="cpuid5" type="radio" name="cpu" value="5"> Games, Videos, Internet surfing, and all of the below.<br>
+  <input id="cpuid4" type="radio" name="cpu" value="1"> Phone Calls and Texting<br>
+</form>
+<div class="radioFormDiv">Do you consider youself tech savy?</div>  
+<form id="radioForm3" class="radioForm">
+  <input id="cpuid3" type="radio" name="cpu" value="10"> Extremely<br>
+  <input id="cpuid2" type="radio" name="cpu" value="5"> Somewhat<br>
+  <input id="cpuid1" type="radio" name="cpu" value="1"> No<br>
+</form>
+<a href="" id="myLink">Submit</a>
